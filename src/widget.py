@@ -13,3 +13,10 @@ def mask_account_card(card_name: Union[str]) -> str:
         return f"{type_card} {get_mask_card_number(card_number)}"
     else:
         return "Неверное значение"
+
+
+
+def get_date(data_string: Union[int]) -> str:
+    '''Возвращает формат даты в виде ДД.ММ.ГГГГ'''
+
+    return f"{str(data_string[8:10])}.{str(data_string[5:7])}.{str(data_string[:4])}"
