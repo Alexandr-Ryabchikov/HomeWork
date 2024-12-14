@@ -30,7 +30,7 @@ exclude = '''
 '''
 
 [tool.isort]
-line-lenght = 119
+line_lenght = 119
 
 [tool.mypy]
 disallow_untyped_defs = true
