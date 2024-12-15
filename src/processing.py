@@ -6,7 +6,7 @@ data = [
             ]
 
 
-def filter_by_state(data, state='EXECUTED'):
+def filter_by_state(data: list, state: str ='EXECUTED') -> list:
     '''
     Функция, принимающая на вход список словарей и на выходе возвращает
     отсортированный спсок по значениям "EXECUTED" или "CANCELED
@@ -15,3 +15,11 @@ def filter_by_state(data, state='EXECUTED'):
     return [d for d in data if d['state'] == state]
 
 
+def sort_by_date(data: list, ascendig: bool= True) -> list:
+    '''
+    Функция, принимающая спсиок словарей и необязательный параметр,задающий порядок
+    сортировки (по умолчанию - убывание) и возвращает новый список, отсортированный по дате
+    '''
+
+    date_sorting = sorted(data, key=lambda x: x['date'], reverse=ascendig)
+    return date_sorting
