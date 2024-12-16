@@ -20,12 +20,16 @@ def sort_by_date(data: list, ascendig: bool = True) -> list:
     Функция, принимающая спсиок словарей и необязательный параметр,задающий порядок
     сортировки (по умолчанию - убывание) и возвращает новый список, отсортированный по дате
     """
-
-    date = sorted(data, key=lambda x: x["date"])
-    return date
+    if ascendig is False:
+        date = sorted(data, key=lambda x: x["date"], reverse=False)
+        return date
+    else:
+        date = sorted(data, key=lambda x: x["date"], reverse=ascendig)
+        return date
 
 
 # Для проверки работы функций
 # print(filter_by_state(data))
 # print(filter_by_state(data, "CANCELED"))
-# print(sort_by_date(data))
+# print(sort_by_date(data))                 # Сортировка по убыванию
+# print(sort_by_date(data, False))          # Сортировка по возрастанию
